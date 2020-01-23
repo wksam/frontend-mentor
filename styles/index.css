@@ -1,34 +1,108 @@
 body {
     font-family: Poppins, sans-serif;
+    background-color: hsl(0, 0%, 98%);
+}
+
+h1, h2, h3 {
+    margin: 0;
+    color: hsl(234, 12%, 34%);
+}
+
+p {
+    margin: 0;
+    color: hsl(229, 6%, 66%);
+}
+
+footer {
+    margin-top: 5rem;
+}
+
+/* Header */
+
+.header {
+    max-width: 36rem;
+    text-align: center;
+    margin: 3rem auto;
+}
+
+.header h1 {
+    font-weight: 200;
+}
+
+.header h2 {
+    font-size: 2rem;
+}
+
+.header p {
+    margin: 1rem 0;
 }
 
 /* Primary Colors */
 .red {
-    color: hsl(0, 78%, 62%);
+    border-top: 4px solid hsl(0, 78%, 62%);
 }
 
 .cyan {
-    color: hsl(180, 62%, 55%);
+    border-top: 4px solid hsl(180, 62%, 55%);
 }
 
 .orange {
-    color: hsl(34, 97%, 64%);
+    border-top: 4px solid hsl(34, 97%, 64%);
 }
 
 .blue {
-    color: hsl(212, 86%, 64%);
+    border-top: 4px solid hsl(212, 86%, 64%);
 }
 
-/* Neutral Colors */
+/* Cards */
 
-.very-dark-blue {
-    color: hsl(234, 12%, 34%);
+.card {
+    box-shadow: 0 16px 16px 0 hsl(217, 29%, 89%);
+    border-radius: 4px;
+    padding: 1.5rem;
+    overflow: hidden;
+    margin: 32px 16px 0;
 }
 
-.grayish-blue {
-    color: hsl(229, 6%, 66%);
+.card p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
 }
 
-.very-light-gray {
-    color: hsl(0, 0%, 98%);
+img {
+    float: right;
+    margin-top: 42px;
+}
+
+/* Columns */
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    .header {
+        max-width: 100%;
+        margin: 16px;
+    }
+
+    .header h1, .header h2 {
+        font-size: 1.5rem;
+    }
+
+    .row {
+        display: block;
+        margin: 0;
+    }
 }
