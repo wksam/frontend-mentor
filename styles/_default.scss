@@ -1,0 +1,12 @@
+body {
+    font: 400 16px $bodyFontFamily;
+    color: $veryDarkCyan;
+}
+
+h1, h2 {
+    font: 600 16px $headingFontFamily;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
