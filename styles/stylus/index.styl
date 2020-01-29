@@ -1,1 +1,197 @@
 @import './styl/*'
+
+.bg-color-light-blue
+    background-color light-grayish-blue
+    color very-dark-blue
+
+.bg-color-desatured-blue
+    background-color desaturated-blue
+
+.bg-color-dark-blue
+    background-color very-dark-blue
+
+.container
+    padding 6rem 5rem
+    @media screen and (max-width: 768px)
+        padding 3rem 2rem
+
+.row
+    display flex
+    flex-direction row
+    width 100%
+    @media screen and (max-width: 768px)
+        flex-direction column
+
+.col
+    width 50%
+    display flex
+    flex-direction column
+    @media screen and (max-width: 768px)
+        width 100%
+    img
+        width 100%
+
+.row-reverse
+    flex-direction row-reverse
+    @media screen and (max-width: 768px)
+        flex-direction column
+
+.bg-image
+    width 100%
+    display: block
+
+@media screen and (max-width: 768px)
+    h1, h3
+        text-align: center
+
+h1
+    font(700, 2.5rem, header-font-family)
+    line-height 3rem
+    @media screen and (max-width: 768px)
+        font-size 1.5rem
+        line-height 2rem
+        margin-top 2rem
+
+h2
+    font(700, 2.25rem, header-font-family)
+    @media screen and (max-width: 768px)
+        font-size 1rem
+        margin-top 5rem
+        text-align: center
+
+h3
+    font(700, 1.75rem, header-font-family)
+    @media screen and (max-width: 768px)
+        font-size 1rem
+
+p
+    font()
+    margin 1rem 0
+
+strong
+    font(700, 1rem, body-font-family)
+    @media screen and (max-width: 768px)
+        font-size 0.75rem
+
+::placeholder
+    color hsl(0, 0%, 75%)
+
+.header
+    color very-dark-blue
+    .navbar
+        list-style none
+        float right
+        li
+            float left
+            padding 0.5rem 1rem
+            margin-left 2rem
+            @media screen and (max-width: 768px)
+                padding 0 0.5rem
+                margin-left 0.5rem
+            a
+                color very-dark-blue
+    .row
+        margin 5rem 0
+    .col
+        justify-content center
+    input[type=text]
+        input-text(35%, 200px)
+        margin-right 0.5rem
+    input[type=submit]
+        input-submit(30%, 150px)
+    @media screen and (max-width: 768px)
+        > img
+            width 20vw
+        p
+            text-align center
+
+.card
+    background-color white
+    box-shadow: 0px 0px 8px 0 hsla(0, 0%, 0%, 20%)
+    padding 2rem
+    width 50%
+    border-radius 4px
+    margin-top 1rem
+    @media screen and (max-width: 768px)
+        width 100%
+        box-sizing border-box
+        padding 1.25rem
+        margin 2rem 0 3rem
+        > p
+            font-size 0.75rem
+    .user
+        display table
+        .float
+            display table-cell
+            vertical-align middle
+            p
+                font-size 0.75rem
+                margin 0
+                @media screen and (max-width: 768px)
+                    font-size 0.5rem
+        img
+            width 3rem
+            height 3rem
+            border-radius 1.5rem
+            float left
+            margin-right 1rem
+            @media screen and (max-width: 768px)
+                width 2rem
+                height 2rem
+                margin-right 0.5rem
+
+
+.content
+    width 80%
+    margin 2rem 0
+    @media screen and (max-width: 768px)
+        width 100%
+        margin 1rem 0
+
+.margin-right
+    margin-right 10rem
+
+.container
+    .content a
+        color a-color
+        border-bottom 1px solid a-color
+    a
+        text-decoration none
+        color black
+        font()
+        @media screen and (max-width: 768px)
+            font-size 1rem
+    &.bg-color-desatured-blue
+    &.bg-color-dark-blue
+        color white
+        a
+            color white
+    &.bg-color-desatured-blue
+        @media screen and (max-width: 768px)
+            text-align center
+            .col
+                margin 1rem 0
+        p
+            margin-bottom 0
+        input[type=text]
+            input-text(80%, 200px)
+            display block
+        input[type=submit]
+            input-submit(30%, 200px)
+    &.bg-color-dark-blue
+        li
+            font()
+            margin 1rem 0
+        .social
+            li
+                float left
+                width 22px
+                text-align center
+                padding 0.5rem
+                margin-right 1rem
+                border 1px solid white
+                border-radius 2rem
+            @media screen and (max-width: 768px)
+                margin 0 auto
+ul.fa-ul
+    margin-left 1.5rem
