@@ -1,0 +1,33 @@
+@import './variables'
+@import './mixins'
+
+.header
+    color very-dark-blue
+    .navbar
+        list-style none
+        float right
+        li
+            float left
+            padding 0.5rem 1rem
+            margin-left 2rem
+            @media screen and (max-width: 768px)
+                padding 0 0.5rem
+                margin-left 0.5rem
+            a
+                color very-dark-blue
+                @media screen and (max-width: 768px)
+                    font-size 1rem
+    .row
+        margin 5rem 0
+    .col
+        justify-content center
+    input[type=text]
+        input-text(35%, 200px)
+        margin-right 0.5rem
+    input[type=submit]
+        input-submit(30%, 150px)
+    @media screen and (max-width: 768px)
+        > img
+            width 20vw
+        p
+            text-align center
