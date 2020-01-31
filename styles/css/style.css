@@ -1,0 +1,287 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font: 400 1rem "Karla", sans-serif;
+}
+
+h1, h2 {
+  font: 400 1rem "DM Serif Display", serif;
+  color: #2d2640;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: #2d2640;
+}
+
+a {
+  text-decoration: none;
+  color: #2d2640;
+}
+
+header nav {
+  position: relative;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 10vw;
+  z-index: 10;
+}
+header nav img {
+  margin: auto 0;
+}
+header nav ul {
+  float: right;
+}
+header nav ul li {
+  float: left;
+  margin-left: 1rem;
+}
+header nav ul li a {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  color: #837d87;
+}
+header nav ul li a:hover {
+  color: #2b272f;
+}
+header nav ul li:last-child a {
+  border: 2px solid #2b272f;
+  color: #2b272f;
+}
+header nav ul li:last-child a:hover {
+  background-color: #2b272f;
+  color: white;
+}
+header section {
+  position: relative;
+  background-color: #2d2640;
+  padding: 10vw;
+}
+header section img {
+  content: "";
+  position: absolute;
+  background-image: url("../../images/image-intro-desktop.jpg");
+  background-repeat: no-repeat;
+  height: 45.139vw;
+  width: 37.5vw;
+  top: 5vw;
+  right: 10vw;
+  z-index: 1;
+}
+header section div {
+  width: 40%;
+}
+header section::before {
+  content: "";
+  position: absolute;
+  background-image: url("../../images/bg-pattern-intro-right-desktop.svg");
+  background-repeat: no-repeat;
+  height: 593px;
+  width: 436px;
+  top: -71px;
+  left: calc(100% - 436px);
+  z-index: 2;
+}
+header section::after {
+  content: "";
+  position: absolute;
+  background-image: url("../../images/bg-pattern-intro-left-desktop.svg");
+  background-repeat: no-repeat;
+  height: 504px;
+  width: 195px;
+  top: 30vw;
+  left: 0;
+  z-index: 2;
+}
+header section h1 {
+  position: relative;
+  color: white;
+}
+header section h1::before {
+  content: "";
+  position: absolute;
+  width: 10vw;
+  height: 1px;
+  background-color: white;
+  top: -5vw;
+  left: 0;
+}
+header section p {
+  margin: 2rem 0;
+  line-height: 2rem;
+  color: white;
+}
+header section a {
+  display: inline-block;
+  border: 1px solid white;
+  background-color: #2d2640;
+  padding: 0.5rem 1.5rem;
+  color: white;
+}
+header section a:hover {
+  background-color: white;
+  color: #2d2640;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 0px;
+}
+
+.content {
+  padding: 10vw;
+}
+.content h1 {
+  position: relative;
+  margin: 10vw 0 5vw;
+}
+.content h1::before {
+  content: "";
+  position: absolute;
+  width: 10vw;
+  height: 1px;
+  background-color: #2d2640;
+  top: -5vw;
+  left: 0;
+}
+.content img {
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+.content h2 {
+  margin: 1rem 0;
+}
+.content p {
+  line-height: 1.5rem;
+}
+.content .col:nth-child(2) {
+  margin: 0 2rem;
+}
+
+.detail div {
+  display: inline-flex;
+  margin: 0 10vw 10vw;
+  padding: 77px;
+  background-color: #2d2640;
+  width: calc(calc(100% - (10vw * 2)) - (77px * 2));
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../../images/bg-pattern-how-we-work-desktop.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+}
+.detail h1 {
+  color: white;
+}
+.detail a {
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  color: white;
+}
+.detail a:hover {
+  background-color: white;
+  color: #2d2640;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #fafafa;
+  padding: 5vw 10vw;
+  background-image: url("../../images/bg-pattern-footer-desktop.svg");
+  background-repeat: no-repeat;
+}
+footer .footer-logo .social {
+  float: right;
+}
+footer .footer-logo .social li {
+  float: left;
+  margin-left: 1rem;
+}
+footer .footer-logo .social li svg:hover path {
+  fill: black;
+}
+footer hr {
+  margin: 2.5vw 0;
+}
+footer h3 {
+  color: #837d87;
+  margin-bottom: 2.5vw;
+}
+footer li {
+  line-height: 2rem;
+}
+footer li a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */

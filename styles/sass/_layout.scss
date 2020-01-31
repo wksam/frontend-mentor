@@ -1,0 +1,225 @@
+@use "sass:map";
+@use "base" as *;
+@use "components" as comp;
+
+body {
+    font: 400 1rem $body-font-family;
+}
+
+h1, h2 {
+    font: 400 1rem $heading-font-family;
+    color: $dark-violet;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: $dark-violet;
+}
+
+a {
+    text-decoration: none;
+    color: $dark-violet;
+}
+
+header {
+    nav {
+        position: relative;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem $default-padding;
+        z-index: 10;
+        img {
+            margin: auto 0;
+        }
+        ul {
+            float: right;
+            li {
+                float: left;
+                margin-left: 1rem;
+                a {
+                    display: block;
+                    padding: 0.5rem 1.5rem;
+                    color: $dark-grayish-violet;
+                    &:hover {
+                        color: $very-dark-violet;
+                    }
+                }
+                &:last-child a {
+                    border: 2px solid $very-dark-violet;
+                    color: $very-dark-violet;
+                    &:hover {
+                        background-color: $very-dark-violet;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    section {
+        position: relative;
+        background-color: $dark-violet;
+        padding: $default-padding;
+        img {
+            @include comp.bg-float-image(
+                map.get($image-intro, "desktop-path"), 
+                45.139vw, 37.5vw, 
+                'top', $default-padding / 2, 
+                'right',$default-padding, 
+                1
+            );
+        }
+        div {
+            width: 40%;
+        }
+        &::before {
+            @include comp.bg-float-image(
+                map.get($bg-pattern-intro-right, "desktop-path"),
+                map.get($bg-pattern-intro-right, "desktop-height"),
+                map.get($bg-pattern-intro-right, "desktop-width"),
+                'top', -71px,
+                'left', calc(100% - #{map.get($bg-pattern-intro-right, "desktop-width")}),
+                2
+            );
+        }
+        &::after {
+            @include comp.bg-float-image(
+                map.get($bg-pattern-intro-left, "desktop-path"), 
+                map.get($bg-pattern-intro-left, "desktop-height"),
+                map.get($bg-pattern-intro-left, "desktop-width"),
+                'top', $default-padding * 3, 
+                'left', 0, 
+                2
+            );
+        }
+        h1 {
+            position: relative;
+            color: white;
+            &::before {
+                @include comp.horizontal-ruler(white);
+            }
+        }
+        p {
+            margin: 2rem 0;
+            line-height: 2rem;
+            color: white;
+        }
+        a {
+            display: inline-block;
+            border: 1px solid white;
+            background-color: $dark-violet;
+            padding: 0.5rem 1.5rem;
+            color: white;
+            &:hover {
+                background-color: white;
+                color: $dark-violet;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 0px;
+}
+
+.content {
+    padding: $default-padding;
+    h1 {
+        position: relative;
+        margin: $default-padding 0 $default-padding / 2;
+        &::before {
+            @include comp.horizontal-ruler($dark-violet);
+        }
+    }
+    img {
+        object-fit: contain;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        margin: 1rem 0;
+    }
+    p {
+        line-height: 1.5rem;
+    }
+    .col:nth-child(2) {
+        margin: 0 2rem;
+    }
+}
+
+.detail {
+    div {
+        display: inline-flex;
+        margin: 0 $default-padding $default-padding;
+        padding: 77px;
+        background-color: $dark-violet;
+        width: width-no-margin(width-no-margin(), 77px);
+        justify-content: space-between;
+        align-items: center;    
+        @include comp.bg-image(map.get($bg-pattern-how-we-work, "desktop-path"));
+        background-position-x: 100%;
+    }
+    h1 {
+        color: white;
+    }
+    a {
+        border: 1px solid white;
+        background-color: transparent;
+        padding: 0.5rem 1.5rem;
+        color: white;
+        &:hover {
+            background-color: white;
+            color: $dark-violet;
+            cursor: pointer;
+        }
+    }
+}
+
+footer {
+    background-color: $very-light-gray;
+    padding: $default-padding / 2 $default-padding;
+    @include comp.bg-image(map.get($bg-pattern-footer, "desktop-path"));
+    .footer-logo {
+        .social {
+            float: right;
+            li {
+                float: left;
+                margin-left: 1rem;
+                svg:hover path {
+                    fill: black;
+                }
+            }
+        }
+    }
+    hr {
+        margin: $default-padding / 4 0;
+    }
+    h3 {
+        color: $dark-grayish-violet;
+        margin-bottom: $default-padding / 4;
+    }
+    li {
+        line-height: 2rem;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
