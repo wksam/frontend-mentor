@@ -24,6 +24,12 @@ $image-intro: (
     "mobile-path": "#{$path}image-intro-mobile.jpg",
 );
 
+$bg-pattern-mobile-nav: (
+    "path": "#{$path}bg-pattern-mobile-nav.svg",
+    "width": 375px,
+    "height": 218px
+);
+
 $bg-pattern-intro-right: (
     "desktop-width": 436px,
     "desktop-height": 593px,
@@ -66,4 +72,9 @@ $bg-pattern-footer: (
 
 @function width-no-margin($base: 100%, $margin: $default-padding) {
     @return calc(#{$base} - (#{$margin} * 2));
+}
+
+@function convert-px-to-vm($pixel, $vw: 1440px){
+    $value: $pixel / $vw * 100vw;
+    @return $value;
 }

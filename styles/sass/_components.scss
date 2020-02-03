@@ -25,3 +25,13 @@
     #{$prop-horizontally}: $val-horizontally;
     z-index: $z-index;
 }
+
+@mixin bg-float-image-size($url, $size, $prop-vertically, $val-vertically, $prop-horizontally, $val-horizontally, $z-index) {
+    content: '';
+    position: absolute;
+    @include bg-image($url);
+    size: $size;
+    #{$prop-vertically}: $val-vertically;
+    #{$prop-horizontally}: $val-horizontally;
+    z-index: $z-index;
+}
