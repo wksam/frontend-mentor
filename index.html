@@ -18,27 +18,80 @@
   </style>
 </head>
 <body>
-  <nav>
+  <header>
     <img src="./images/logo.svg" alt="Logo Icon">
-    <ul>
-      <li><a href="#">Product</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Pricing</a></li>
-      <li><a href="#">Login</a></li>
-    </ul>
-  </nav>
+    <a id="menu" href="javascript:;">
+      <img class="img" src="./images/icon-hamburger.svg" alt="Hamburger Icon">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#">PRODUCT</a></li>
+        <li><a href="#">FEATURES</a></li>
+        <li><a href="#">PRICING</a></li>
+        <li>•</li>
+        <li><a href="#">LOGIN</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <img class="img-device" src="./images/illustration-devices.svg" alt="Illustration Devices">
+  </div>
   <section>
-    <p><span>NEW</span> MONOGRAPH DASHBOARD</p>
-    <h1>POWERFUL INSIGHTS INTO YOUR TEAM</h1>
-    <p>Project planning and time tracking for agile teams</p>
-    <a href="#">SCHEDULE A DEMO</a>
-    <a href="#">TO SEE A PREVIEW</a>
+    <h6><span>NEW</span> MONOGRAPH DASHBOARD</h6>
+    <h1>POWERFUL INSIGHTS<br/> INTO YOUR TEAM</h1>
+    <p>Project planning and time tracking<br/> for agile teams</p>
+    <div class="link">
+      <a href="#" class="schedule">SCHEDULE A DEMO</a>
+      <a href="#" class="preview">TO SEE A PREVIEW</a>
+    </div>
   </section>
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/wksam">Sam</a>.
     </p>
   </footer>
+  <script>
+    var menu = document.getElementById("menu");
+    menu.onclick = showDropDown;
+
+    function showDropDown() {
+      var path = window.location.protocol + "//" + window.location.host + pathName();
+      var img = this.firstElementChild;
+      var nav = document.getElementsByTagName("nav")[0];
+      if(img.src.includes("hamburger")) {
+        img.src = path + "/images/icon-close.svg";
+        nav.style.display = "initial";
+      } else {
+        img.src = path + "/images/icon-hamburger.svg";
+        nav.style.display = "none";
+      }
+    }
+
+    function pathName() {
+      var path = window.location.pathname.split("/");
+      if(path[path.length - 1].match("index") != null) {
+        path.pop();
+      }
+      return path.join([separador="/"]);
+    }
+
+    function toggleMenu() {
+      var path = window.location.protocol + "//" + window.location.host + pathName();
+      var img = document.getElementById("menu").firstChild;
+      var nav = document.getElementsByTagName("nav")[0];
+      if(screen.matches) {
+        img.src = path + "/images/icon-hamburger.svg";
+        nav.style.display = "none";
+      } else {
+        img.src = path + "/images/icon-close.svg";
+        nav.style.display = "initial";
+      }
+    }
+
+    var screen = window.matchMedia("(max-width: 768px)");
+    toggleMenu(screen);
+    screen.addListener(toggleMenu);
+  </script>
 </body>
 </html>
