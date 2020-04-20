@@ -1,0 +1,37 @@
+@use "base" as *;
+
+@mixin horizontal-ruler($color) {
+    content: '';
+    position: absolute;
+    width: $default-padding;
+    height: 1px;
+    background-color: $color;
+    top: -$default-padding / 2;
+    left: 0;
+}
+
+@mixin bg-image($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+}
+
+@mixin bg-float-image($url, $height, $width, $prop-vertically, $val-vertically, $prop-horizontally, $val-horizontally, $z-index) {
+    content: '';
+    position: absolute;
+    @include bg-image($url);
+    height: $height;
+    width: $width;
+    #{$prop-vertically}: $val-vertically;
+    #{$prop-horizontally}: $val-horizontally;
+    z-index: $z-index;
+}
+
+@mixin bg-float-image-size($url, $size, $prop-vertically, $val-vertically, $prop-horizontally, $val-horizontally, $z-index) {
+    content: '';
+    position: absolute;
+    @include bg-image($url);
+    size: $size;
+    #{$prop-vertically}: $val-vertically;
+    #{$prop-horizontally}: $val-horizontally;
+    z-index: $z-index;
+}

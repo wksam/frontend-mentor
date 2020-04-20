@@ -1,0 +1,80 @@
+@use "sass:map";
+
+$dark-violet: hsl(256, 26%, 20%);
+$grayish-blue: hsl(216, 30%, 68%);
+
+$very-dark-violet: hsl(270, 9%, 17%);
+$dark-grayish-violet: hsl(273, 4%, 51%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+$heading-font-family: 'DM Serif Display', serif;
+$body-font-family: 'Karla', sans-serif;
+
+$default-padding: 10vw;
+
+$path: "../../images/";
+
+$image-intro: (
+    "desktop-width": 540px,
+    "desktop-height": 650px,
+    "desktop-path": "#{$path}image-intro-desktop.jpg",
+
+    "mobile-width": 375px,
+    "mobile-height": 451px,
+    "mobile-path": "#{$path}image-intro-mobile.jpg",
+);
+
+$bg-pattern-mobile-nav: (
+    "path": "#{$path}bg-pattern-mobile-nav.svg",
+    "width": 375px,
+    "height": 218px
+);
+
+$bg-pattern-intro-right: (
+    "desktop-width": 436px,
+    "desktop-height": 593px,
+    "desktop-path": "#{$path}bg-pattern-intro-right-desktop.svg",
+
+    "mobile-width": 124px,
+    "mobile-height": 330px,
+    "mobile-path": "#{$path}bg-pattern-intro-right-mobile.svg",
+);
+
+$bg-pattern-intro-left: (
+    "desktop-width": 195px,
+    "desktop-height": 504px,
+    "desktop-path": "#{$path}bg-pattern-intro-left-desktop.svg",
+
+    "mobile-width": 168px,
+    "mobile-height": 165px,
+    "mobile-path": "#{$path}bg-pattern-intro-left-mobile.svg",
+);
+
+$bg-pattern-how-we-work: (
+    "desktop-width": 434px,
+    "desktop-height": 250px,
+    "desktop-path": "#{$path}bg-pattern-how-we-work-desktop.svg",
+
+    "mobile-width": 176px,
+    "mobile-height": 317px,
+    "mobile-path": "#{$path}bg-pattern-how-we-work-mobile.svg",
+);
+
+$bg-pattern-footer: (
+    "desktop-width": 528px,
+    "desktop-height": 231px,
+    "desktop-path": "#{$path}bg-pattern-footer-desktop.svg",
+
+    "mobile-width": 374px,
+    "mobile-height": 173px,
+    "mobile-path": "#{$path}bg-pattern-footer-mobile.svg",
+);
+
+@function width-no-margin($base: 100%, $margin: $default-padding) {
+    @return calc(#{$base} - (#{$margin} * 2));
+}
+
+@function convert-px-to-vm($pixel, $vw: 1440px){
+    $value: $pixel / $vw * 100vw;
+    @return $value;
+}
