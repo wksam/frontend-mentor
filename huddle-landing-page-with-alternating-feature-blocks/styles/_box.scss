@@ -1,0 +1,35 @@
+.box {
+    width: 50%;
+    text-align: center;
+    padding: 3rem;
+    margin: -12rem auto 5rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 16px 0 hsla(0, 0%, 50%, 0.1) ;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    button {
+        @include button($pink, white);
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 90%;
+        padding: 1rem;
+        margin: -9rem auto 3rem;
+
+        h2 {
+            font-size: 1rem;
+        }
+
+        button {
+            font-size: 0.75rem;
+            padding: 0.75rem 2.5rem;
+        }
+    }
+}

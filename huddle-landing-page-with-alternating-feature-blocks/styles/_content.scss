@@ -1,0 +1,40 @@
+.content {
+    margin: 10rem 5rem;
+
+    .row {
+        box-shadow: 0 0 16px 0 hsla(0, 0%, 50%, 0.1) ;
+        border-radius: 1rem;
+        margin: 3rem 0;
+
+        .col {
+            margin: 4rem;
+            
+            img {
+                width: 100%;
+            }
+
+            p {
+                color: $grayishBlue;
+                margin-top: 1rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin: 1rem;
+
+        .row {
+            flex-direction: column;
+
+            .col {
+                margin: 3rem;
+                h2, p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
