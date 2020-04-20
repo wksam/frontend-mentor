@@ -1,0 +1,189 @@
+@import "reset";
+
+@red: hsl(0, 100%, 68%);
+@very-dark-blue: hsl(230, 29%, 20%);
+@dark-grayish-blue: hsl(230, 11%, 40%);
+@grayish-blue: hsl(231, 7%, 65%);
+@light-grayish-blue: hsl(207, 33%, 95%);
+
+@barlow-condensed: 'Barlow Condensed', sans-serif;
+@barlow: 'Barlow', sans-serif;
+
+@max768: ~"(max-width: 768px)";
+
+body {
+    font: 400 1.125rem @barlow;
+    margin: 5rem 10rem;
+    color: @very-dark-blue;
+    @media @max768 {
+        margin: 2rem;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: @light-grayish-blue;
+        width: 50vw;
+        height: 50vh;
+        top: 0;
+        right: 0rem;
+        z-index: -1;
+        border-radius: 0 0 0 2rem;
+    }
+}
+
+a {
+    color: @very-dark-blue;
+}
+
+#menu {
+    display: none;
+    @media @max768 {
+        display: block;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    @media @max768 {
+        flex-wrap: wrap;
+    }
+    nav {
+        @media @max768 {
+            display: none;
+            position: absolute;
+            top: 2rem;
+            z-index: 1;
+        }
+        ul {
+            display: flex;
+            @media @max768 {
+                flex: 0 0 100%;
+                flex-wrap: wrap;
+                text-align: center;
+                background-color: white;
+                box-shadow: 0 8px 16px 0 hsla(0, 0%, 0%, 0.2);
+                margin-top: 2rem;
+                :nth-child(4) {
+                    display: none;
+                }
+            }
+            li {
+                margin-left: 3rem;
+                color: @grayish-blue;
+                @media @max768 {
+                    padding: 1rem 5vw;
+                    width: calc(100% - (10vw * 2));
+                    margin: 0 5vw;
+                }
+                a {
+                    font: 700 1.125rem @barlow-condensed;
+                    text-decoration: none;
+                    color: @very-dark-blue;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                &:last-child {
+                    @media @max768 {
+                        border-top: 1px solid @grayish-blue;
+                    }
+                    a {
+                        color: @grayish-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#device-img() {
+    height: 464px;
+    width: 960px;
+}
+
+.container {
+    position: relative;
+    .img-device {
+        position: absolute;
+        width: 48.611vw;
+        height: #device-img[height];
+        object-fit: cover;
+        object-position: left;
+        right: -10rem;
+        top: 5rem;
+        z-index: -1;
+        @media @max768 {
+            width: 343px;
+            height: 232px;
+            top: 0;
+            right: -2rem;
+            margin-top: 2rem;
+        }
+    }
+}
+
+section {
+    margin-top: 10rem;
+    @media @max768 {
+        margin-top: 20rem;
+    }
+    h6 {
+        font: 400 1.125rem @barlow-condensed;
+        letter-spacing: 0.25rem;
+        span {
+            background-color: @very-dark-blue;
+            color: white;
+            border-radius: 2rem;
+            padding: 0 0.5rem 0.125rem;
+            letter-spacing: normal;
+        }
+    }
+    h1 {
+        font: 700 4rem @barlow-condensed;
+        line-height: 4rem;
+        margin: 2rem 0;
+        @media @max768 {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+            margin: 1rem 0;
+        }
+    }
+    .link {
+        margin: 4rem 0;
+        @media @max768 {
+            margin: 2rem 0;
+        }
+    }
+}
+
+.schedule {
+    background-color: @red;
+    font: 400 1.125rem @barlow-condensed;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    margin-right: 20px;
+    @media @max768 {
+        font-size: 1rem;
+        margin-right: 0;
+    }
+    &:hover {
+        background-color: lighten(@red, 10%);
+    }
+}
+
+.preview {
+    font: 400 1.125rem @barlow-condensed;
+    color: @grayish-blue;
+    text-decoration: none;
+    letter-spacing: 0.25rem;
+    padding: 0.5rem 1rem;
+    @media @max768 {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+    }
+}
