@@ -1,0 +1,90 @@
+@import './styl/*'
+
+.bg-color-light-blue
+    background-color light-grayish-blue
+    color very-dark-blue
+
+.bg-color-desatured-blue
+    background-color desaturated-blue
+
+.bg-color-dark-blue
+    background-color very-dark-blue
+
+.container
+    padding 6rem 5rem
+    @media screen and (max-width: 768px)
+        padding 3rem 2rem
+
+.row
+    display-flex()
+    flex-direction row
+    width 100%
+    @media screen and (max-width: 768px)
+        flex-direction column
+
+.col
+    width 50%
+    display-flex()
+    flex-direction column
+    @media screen and (max-width: 768px)
+        width 100%
+    img
+        width 100%
+
+.row-reverse
+    flex-direction row-reverse
+    @media screen and (max-width: 768px)
+        flex-direction column
+
+.bg-image
+    width 100%
+    display: block
+
+h1
+    font 700 2.5rem header-font-family
+    line-height 3rem
+    @media screen and (max-width: 768px)
+        font-size 1.5rem
+        line-height 2rem
+        margin-top 2rem
+
+h2
+    font 700 2.25rem header-font-family
+    @media screen and (max-width: 768px)
+        font-size 1rem
+        margin-top 5rem
+        text-align: center
+
+h3
+    font 700 1.75rem header-font-family
+    @media screen and (max-width: 768px)
+        font-size 1rem
+
+@media screen and (max-width: 768px)
+    h1, h3
+        text-align: center
+
+p
+    font 400 1rem body-font-family
+    margin 1rem 0
+
+strong
+    font 700 1rem body-font-family
+    @media screen and (max-width: 768px)
+        font-size 0.75rem
+
+::placeholder
+::-ms-input-placeholder
+::-moz-input-placeholder
+::-webkit-input-placeholder
+    color hsl(0, 0%, 75%)
+
+.content
+    width 80%
+    margin 2rem 0
+    @media screen and (max-width: 768px)
+        width 100%
+        margin 1rem 0
+
+ul.fa-ul
+    margin-left 1.5rem
