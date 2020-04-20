@@ -1,0 +1,128 @@
+@violet: hsl(257, 40%, 49%);
+@heading-font: 700 32px 'Open Sans', sans-serif;
+@body-font: 300 16px 'Poppins', sans-serif;
+
+@path: "../../images/";
+@bg-desktop: "bg-desktop.svg";
+@bg-mobile: "bg-mobile.svg";
+
+body {
+    font: @body-font;
+    color: white;
+}
+
+h1 {
+    font: @heading-font;
+    line-height: 3rem;
+    margin: 0;
+}
+
+.set-background(@image) {
+    background-color: @violet;
+    background-image: url("@{path}@{image}");
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    .background {
+        .set-background(@bg-desktop);
+
+        > img {
+            display: block;
+            padding: 4rem 4rem 0;
+            width: 12rem;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    margin: 5rem 4rem 0;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    > img {
+        object-fit: contain;
+        max-width: 50%;
+    }
+}
+
+.right {
+    flex-direction: column;
+    margin: 1rem 3rem;
+    p {
+        margin: 2rem 0;
+    }
+}
+
+button {
+    text-decoration: none;
+    border: 0 none;
+    background-color: white;
+    font: @body-font;
+    color: @violet;
+    padding: 0.75rem 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 8px 8px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.round-circle(@size) {
+    padding: @size;
+    border: 1px solid white;
+    border-radius: @size * 2;
+    width: 1rem;
+}
+
+ul.social {
+    text-align: right;
+    padding: 2rem 4rem;
+    margin: 0;
+    li {
+        display: inline-block;
+        margin-left: 0.5rem;
+        i {
+            .round-circle(0.5rem);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        .background {
+            .set-background(@bg-mobile);
+    
+            > img {
+                padding: 2rem 2rem 0;
+                width: 8rem;
+            }
+        }
+    }
+
+    .content {
+        flex-direction: column;
+        margin: 3.5rem 2rem 0;
+    
+        > img {
+            max-width: 100%;
+        }
+    }
+
+    .right {
+        text-align: center;
+        margin: 4rem 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    ul.social {
+        text-align: center;
+        padding: 1rem 0 3rem;
+    }
+}
